@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Migrador - AgroTech Bioenergia S.A.</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #f8fafc; color: #333; }
+        .card { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
+        button, input { margin-top: 20px; }
+        #log { margin-top: 20px; font-family: monospace; white-space: pre-wrap; background: #1e293b; color: #10b981; padding: 15px; border-radius: 6px; max-height: 400px; overflow-y: auto; display: none;}
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🚀 Jarvis: Migrador de Processos</h2>
+    <p>Selecione o arquivo <b>banco_processos.json</b> da AgroTech Bioenergia S.A. para enviá-lo de forma permanente ao Firebase.</p>
+    
+    <input type="file" id="fileInput" accept=".json" />
+    <div id="log"></div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+<script>
+    // Conexão com o Firebase
+    firebase.initializeApp({
+        apiKey: "SUA_FIREBASE_API_KEY",
+        projectId: "gestao-de-processos-ca78d"
+    });
+    const db = firebase.firestore();
+
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const log = document.getElementById('log');
+        log.style.display = 'block';
+        log.innerHTML = "Iniciando leitura do arquivo...\n";
+
+        const reader = new FileReader();
+        reader.onload = async function(e) {
+            try {
+                const dados = JSON.parse(e.target.result);
+                // Garante que pega a lista de projetos
+                const listaProjetos = Array.isArray(dados) ? dados : dados.projects;
+                
+                log.innerHTML += `Encontrados ${listaProjetos.length} projetos. Conectando a São Paulo...\n\n`;
+                let count = 0;
+
+                for (const p of listaProjetos) {
+                    const limpo = Object.assign({}, p);
+                    const id = limpo.id;
+                    
+                    // Removemos campos calculados para o banco ficar limpo
+                    delete limpo.id;
+                    delete limpo.percentagemConclusao;
+                    delete limpo.diasParaConclusaoPrevista;
+
+                    if (id) {
+                        await db.collection("projects").doc(id).set(limpo);
+                    } else {
+                        await db.collection("projects").add(limpo);
+                    }
+                    
+                    log.innerHTML += `✅ Salvo: ${limpo.projeto}\n`;
+                    count++;
+                }
+
+                log.innerHTML += `\n🏁 Jarvis: Sucesso, chefe! ${count} projetos foram gravados com sucesso no banco de dados.`;
+                
+            } catch (err) {
+                log.innerHTML += `\n❌ ERRO: ${err.message}`;
+            }
+        };
+        reader.readAsText(file);
+    });
+</script>
+
+</body>
+</html>

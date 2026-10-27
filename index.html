@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroTech Bioenergia S.A. &#8212; Gest&#227;o de Processos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=12.3">
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+    <div id="screen-login" class="login-screen">
+        <div class="login-card">
+            <div class="login-brand">
+                <img src="Logo Branca.png" alt="AgroTech Bioenergia S.A." class="login-logo">
+                <h1>Gest&#227;o de Processos</h1>
+                <p>Coordena&#231;&#227;o e Indicadores Operacionais</p>
+            </div>
+            <form id="login-form" novalidate>
+                <div class="form-group">
+                    <label for="login-user">Utilizador</label>
+                    <div class="input-icon-wrap">
+                        <span class="material-symbols-rounded">person</span>
+                        <input type="text" id="login-user" placeholder="nome.utilizador" required
+                            autocomplete="username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Senha</label>
+                    <div class="input-icon-wrap">
+                        <span class="material-symbols-rounded">lock</span>
+                        <input type="password" id="login-pass"
+                            placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" required
+                            autocomplete="current-password">
+                    </div>
+                </div>
+                <p class="login-error" id="login-error"></p>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <span class="material-symbols-rounded">login</span> Entrar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- APP -->
+    <div id="screen-app" class="app-layout" style="display:none">
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="Logo Branca.png" alt="AgroTech Bioenergia S.A." class="sidebar-logo logo-dark" style="display:var(--logo-dark-display)">
+                <img src="Logo Azul.png" alt="AgroTech Bioenergia S.A." class="sidebar-logo logo-light" style="display:var(--logo-light-display)">
+            </div>
+
+            <div class="db-controls">
+                <div class="session-badge" id="session-badge">
+                    <span class="material-symbols-rounded"
+                        style="font-size:1.5rem;color:var(--accent-primary)">account_circle</span>
+                    <div>
+                        <span class="session-name" id="session-name">&#8212;</span>
+                        <span class="session-role" id="session-role">&#8212;</span>
+                    </div>
+                    <button class="btn-icon" id="btn-logout" title="Sair"><span
+                            class="material-symbols-rounded">logout</span></button>
+                </div>
+                <p class="db-status connected" id="db-status-badge">
+                    <span class="material-symbols-rounded" style="font-size:1rem">cloud_done</span> <span>Firestore
+                        Sincronizado</span>
+                </p>
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-link active" data-view="dashboard">
+                    <span class="material-symbols-rounded">pie_chart</span> Dashboard
+                </a>
+                <a href="#" class="nav-link" data-view="kanban">
+                    <span class="material-symbols-rounded">checklist</span> Processos
+                </a>
+                <a href="#" class="nav-link" data-view="gantt">
+                    <span class="material-symbols-rounded">timeline</span> Gantt
+                </a>
+                <a href="#" class="nav-link" data-view="inconformidades">
+                    <span class="material-symbols-rounded">report_problem</span> Inconformidades
+                </a>
+                <a href="#" class="nav-link" data-view="reprovados">
+                    <span class="material-symbols-rounded">block</span> Reprovados
+                </a>
+                <a href="#" class="nav-link nav-admin-only" data-view="admin" style="display:none">
+                    <span class="material-symbols-rounded">shield</span> Administra&#231;&#227;o
+                </a>
+            </nav>
+            <div class="theme-toggle-wrap">
+                <button class="theme-toggle-btn" id="btn-toggle-theme" title="Alternar Tema">
+                    <span class="material-symbols-rounded" id="theme-icon">light_mode</span>
+                    <span id="theme-label">Tema Claro</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <!-- DASHBOARD -->
+            <section id="view-dashboard" class="view-section active">
+                <header class="section-header">
+                    <h1><span class="material-symbols-rounded">trending_up</span> Painel de Indicadores</h1>
+                    <p class="subtitle">M&#233;tricas extra&#237;das em tempo real do Firestore.</p>
+                </header>
+                <div class="dashboard-subnav">
+                    <button class="dashboard-subtab active" data-dash-subview="overview">
+                        <span class="material-symbols-rounded">dashboard</span> Visão Geral
+                    </button>
+                    <button class="dashboard-subtab" data-dash-subview="kpis">
+                        <span class="material-symbols-rounded">analytics</span> KPIs Executivos (Operacionais)
+                    </button>
+                </div>
+                <div class="dashboard-filter-bar" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                        <span class="filter-label"><span class="material-symbols-rounded"
+                                style="font-size:1.1rem">filter_alt</span> Filtrar por setor:</span>
+                        <div class="tabs" id="dashboard-sector-tabs"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-left: auto; position: relative;">
+                        <span class="filter-label"><span class="material-symbols-rounded"
+                                style="font-size:1.1rem">calendar_month</span> Competência:</span>
+                        <button id="btn-dashboard-competence" class="btn btn-outline" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; padding: 0.45rem 0.85rem; cursor: pointer; border-radius: var(--radius-md); background: var(--bg-elevated); border: 1px solid var(--border-color); color: var(--text-primary); transition: var(--transition-fast);">
+                            <span id="dashboard-month-label">Todas as competências</span>
+                            <span class="material-symbols-rounded" style="font-size: 1.1rem; color: var(--text-secondary);">arrow_drop_down</span>
+                        </button>
+                        
+                        <!-- Popover Picker -->
+                        <div id="dashboard-competence-popover" style="display: none; position: absolute; top: calc(100% + 0.5rem); right: 0; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); padding: 1rem; width: 260px; z-index: 1000;">
+                            <!-- Year Select Header -->
+                            <div style="margin-bottom: 0.75rem;">
+                                <select id="picker-year-select" style="width: 100%; border: 1px solid var(--border-color); background: var(--bg-elevated); padding: 0.4rem; font-weight: bold; border-radius: var(--radius-sm); font-size: 0.9rem; color: var(--text-primary); outline: none; cursor: pointer;">
+                                </select>
+                            </div>
+                            
+                            <!-- Months Grid -->
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem;" id="picker-months-grid">
+                                <button class="picker-month-btn" data-month="01" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">jan</button>
+                                <button class="picker-month-btn" data-month="02" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">fev</button>
+                                <button class="picker-month-btn" data-month="03" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">mar</button>
+                                <button class="picker-month-btn" data-month="04" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">abr</button>
+                                <button class="picker-month-btn" data-month="05" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">mai</button>
+                                <button class="picker-month-btn" data-month="06" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">jun</button>
+                                <button class="picker-month-btn" data-month="07" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">jul</button>
+                                <button class="picker-month-btn" data-month="08" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">ago</button>
+                                <button class="picker-month-btn" data-month="09" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">set</button>
+                                <button class="picker-month-btn" data-month="10" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">out</button>
+                                <button class="picker-month-btn" data-month="11" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">nov</button>
+                                <button class="picker-month-btn" data-month="12" style="background: transparent; border: none; padding: 0.5rem 0; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; border-radius: var(--radius-sm); transition: all 0.15s ease;">dez</button>
+                            </div>
+                            
+                            <!-- Footer Buttons -->
+                            <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 0.75rem; font-size: 0.8rem;">
+                                <button id="picker-btn-clear" style="background: transparent; border: none; color: var(--color-danger); cursor: pointer; font-weight: 600; padding: 0.2rem 0.5rem; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Limpar</button>
+                                <button id="picker-btn-current" style="background: transparent; border: none; color: var(--accent-primary); cursor: pointer; font-weight: 600; padding: 0.2rem 0.5rem; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Este mês</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dash-subview-overview" class="dash-subview-content active">
+                <div class="dashboard-grid">
+                    <div class="kpi-card" id="card-kpi-total" style="cursor: pointer;">
+                        <div class="kpi-icon"><span class="material-symbols-rounded">account_tree</span></div>
+                        <div class="kpi-data">
+                            <h3>Total de Projetos</h3><span class="kpi-value" id="kpi-total">0</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card" id="card-kpi-concluidos" style="cursor: pointer;">
+                        <div class="kpi-icon success"><span class="material-symbols-rounded">check_circle</span></div>
+                        <div class="kpi-data">
+                            <h3>Conclu&#237;dos</h3><span class="kpi-value" id="kpi-concluidos">0</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card" id="card-kpi-andamento" style="cursor: pointer;">
+                        <div class="kpi-icon progress"><span class="material-symbols-rounded">sync</span></div>
+                        <div class="kpi-data">
+                            <h3>Em Andamento</h3><span class="kpi-value" id="kpi-andamento">0</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card" id="card-kpi-atrasados" style="cursor: pointer;">
+                        <div class="kpi-icon danger"><span class="material-symbols-rounded">warning</span></div>
+                        <div class="kpi-data">
+                            <h3>Em Atraso</h3><span class="kpi-value" id="kpi-atrasados">0</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card" id="card-kpi-reprovados" style="cursor: pointer;">
+                        <div class="kpi-icon danger" style="background:rgba(248,113,113,0.12);color:var(--color-danger)"><span class="material-symbols-rounded">block</span></div>
+                        <div class="kpi-data">
+                            <h3>Reprovados</h3><span class="kpi-value" id="kpi-reprovados">0</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card" id="card-kpi-meta" style="cursor: pointer;">
+                        <div class="kpi-icon success" style="background:rgba(16,185,129,0.1);color:var(--color-success)"><span class="material-symbols-rounded">playlist_add_check</span></div>
+                        <div class="kpi-data">
+                            <h3>Previsão vs. Realizado</h3><span class="kpi-value" id="kpi-meta-entregas">0 / 0</span>
+                            <small id="kpi-meta-percent" style="font-size:0.75rem;margin-top:2px;display:block;color:var(--text-secondary);font-weight:500;">0.0% das metas concluídas</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-lay">
+                    <div class="chart-container">
+                        <h3>Desempenho por Setor</h3>
+                        <p class="chart-desc">M&#233;dia da % de conclus&#227;o de projetos ativos.</p>
+                        <div class="sector-bars-wrapper" id="sector-bars-container"></div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Projetos Cr&#237;ticos (Atraso)</h3>
+                        <p class="chart-desc">Projetos onde dias previstos &lt; 0.</p>
+                        <div class="critical-list" id="critical-projects-list"></div>
+                    </div>
+                </div>
+                </div>
+                <!-- SUBVIEW KPIS EXECUTIVOS -->
+                <div id="dash-subview-kpis" class="dash-subview-content" style="display:none;">
+                    <div class="kpi-exec-header" style="margin-bottom:1.25rem;">
+                        <h3 style="font-size:1.1rem;font-weight:600;color:var(--text-primary);display:flex;align-items:center;gap:0.5rem;">
+                            <span class="material-symbols-rounded" style="color:var(--accent-primary)">insights</span> Relatório de Desempenho Operacional
+                        </h3>
+                        <p style="font-size:0.8rem;color:var(--text-secondary);">Indicadores consolidados calculados em tempo real de acordo com os filtros de setor e competência.</p>
+                    </div>
+                    <div class="exec-kpis-grid" id="exec-kpis-grid"></div>
+                </div>
+            </section>
+
+            <!-- KANBAN -->
+            <section id="view-kanban" class="view-section">
+                <header class="section-header flex-header">
+                    <div>
+                        <h1><span class="material-symbols-rounded">checklist</span> Registo de Processos</h1>
+                        <p class="subtitle">Gerencie o ciclo de vida dos projetos por Setor.</p>
+                    </div>
+                    <div style="display:flex; gap:0.5rem;">
+                        <button id="btn-export-csv" class="btn btn-outline">
+                            <span class="material-symbols-rounded">download</span> Exportar Relatório
+                        </button>
+                        <button id="btn-new-process" class="btn btn-primary">
+                            <span class="material-symbols-rounded">add</span> Novo Projeto
+                        </button>
+                    </div>
+                </header>
+                <div class="filters-container">
+                    <div class="tabs" id="sector-filters">Carregando...</div>
+                </div>
+                <div class="filters-container" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                    <div class="tabs" id="type-filters">Carregando...</div>
+                </div>
+                <div class="kanban-grid" id="kanban-container"></div>
+            </section>
+
+            <!-- GANTT -->
+            <section id="view-gantt" class="view-section">
+                <header class="section-header flex-header">
+                    <div>
+                        <h1><span class="material-symbols-rounded">timeline</span> Cronograma Gantt</h1>
+                        <p class="subtitle">Visualização cronológica dos projetos e prazos.</p>
+                    </div>
+                    <button id="btn-export-gantt-excel" class="btn btn-outline">
+                        <span class="material-symbols-rounded">download</span> Exportar Gantt Excel
+                    </button>
+                </header>
+                <div class="filters-container" style="margin-bottom: 1.5rem;">
+                    <div class="tabs" id="gantt-sector-tabs"></div>
+                </div>
+
+                <!-- Filtros de Data do Gantt -->
+                <div class="gantt-date-filters">
+                    <div class="form-group">
+                        <label for="gantt-filter-month">Filtrar por M&#234;s</label>
+                        <select id="gantt-filter-month">
+                            <option value="Todos">Todos os meses</option>
+                            <option value="1">Janeiro</option>
+                            <option value="2">Fevereiro</option>
+                            <option value="3">Mar&#231;o</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Maio</option>
+                            <option value="6">Junho</option>
+                            <option value="7">Julho</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gantt-filter-start">De (Data Inicial)</label>
+                        <input type="date" id="gantt-filter-start">
+                    </div>
+                    <div class="form-group">
+                        <label for="gantt-filter-end">At&#233; (Data Final)</label>
+                        <input type="date" id="gantt-filter-end">
+                    </div>
+                    <button id="btn-gantt-clear-dates" class="btn btn-outline">
+                        <span class="material-symbols-rounded">clear_all</span> Limpar Filtros
+                    </button>
+                </div>
+
+                <div class="chart-container" style="padding: 1.5rem; overflow-x: auto;">
+                    <div id="gantt-chart-container" style="min-width: 800px;"></div>
+                </div>
+            </section>
+
+            <!-- INCONFORMIDADES -->
+            <section id="view-inconformidades" class="view-section">
+                <header class="section-header flex-header">
+                    <div>
+                        <h1><span class="material-symbols-rounded">report_problem</span> Registo de Inconformidades</h1>
+                        <p class="subtitle">Gerencie, acompanhe e mensure as inconformidades tratadas.</p>
+                    </div>
+                    <button id="btn-new-inconformidade" class="btn btn-primary">
+                        <span class="material-symbols-rounded">add</span> Nova Inconformidade
+                    </button>
+                </header>
+                
+                <div class="dashboard-grid" style="margin-bottom: 1.75rem;">
+                    <div class="kpi-card">
+                        <div class="kpi-icon"><span class="material-symbols-rounded">list_alt</span></div>
+                        <div class="kpi-data">
+                            <h3>Total Registradas</h3><span class="kpi-value" id="kpi-inc-total">0</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon progress"><span class="material-symbols-rounded">search</span></div>
+                        <div class="kpi-data">
+                            <h3>Em Análise</h3><span class="kpi-value" id="kpi-inc-analise">0</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon progress" style="background:rgba(96,165,250,0.1);color:var(--color-info)"><span class="material-symbols-rounded">sync</span></div>
+                        <div class="kpi-data">
+                            <h3>Em Andamento</h3><span class="kpi-value" id="kpi-inc-andamento">0</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon success"><span class="material-symbols-rounded">check_circle</span></div>
+                        <div class="kpi-data">
+                            <h3>Tratadas</h3><span class="kpi-value" id="kpi-inc-tratadas">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filters-container">
+                    <div class="tabs" id="inconformidades-sector-tabs"></div>
+                </div>
+                <div class="filters-container" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                    <div class="tabs" id="inconformidades-stage-tabs"></div>
+                </div>
+
+                <div class="kanban-grid" id="inconformidades-container"></div>
+            </section>
+
+            <!-- REPROVADOS -->
+            <section id="view-reprovados" class="view-section">
+                <header class="section-header flex-header" style="display:flex;justify-content:space-between;align-items:flex-start;">
+                    <div>
+                        <h1><span class="material-symbols-rounded">block</span> Processos Reprovados</h1>
+                        <p class="subtitle">Projetos que foram reprovados ou cancelados no fluxo.</p>
+                    </div>
+                    <div class="kpi-card-sm" style="display:flex;align-items:center;gap:0.5rem;background:var(--card-bg);border:1px solid var(--card-border);padding:0.6rem 1.1rem;border-radius:var(--radius-md);box-shadow:var(--card-shadow);">
+                        <span class="material-symbols-rounded" style="color:var(--color-danger)">cancel</span>
+                        <span style="font-size:0.85rem;color:var(--text-secondary)">Total Reprovados: <strong id="reprovados-count" style="color:var(--text-primary);font-size:1.15rem">0</strong></span>
+                    </div>
+                </header>
+
+                <div class="filters-container">
+                    <div class="tabs" id="reprovados-sector-tabs"></div>
+                </div>
+
+                <div class="kanban-grid" id="reprovados-container"></div>
+            </section>
+
+            <!-- ADMIN -->
+            <section id="view-admin" class="view-section">
+                <header class="section-header">
+                    <h1><span class="material-symbols-rounded">shield</span> Painel de Administra&#231;&#227;o</h1>
+                    <p class="subtitle">Gerir utilizadores, setores e permiss&#245;es.</p>
+                </header>
+                <div class="admin-grid">
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3><span class="material-symbols-rounded">business</span> Setores</h3>
+                            <button class="btn btn-sm btn-primary" id="btn-add-sector"><span
+                                    class="material-symbols-rounded">add</span> Novo Setor</button>
+                        </div>
+                        <div class="admin-card-body" id="admin-sectors-list"></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3><span class="material-symbols-rounded">group</span> Utilizadores</h3>
+                            <button class="btn btn-sm btn-primary" id="btn-add-user"><span
+                                    class="material-symbols-rounded">person_add</span> Novo Utilizador</button>
+                        </div>
+                        <div class="admin-card-body" id="admin-users-list"></div>
+                    </div>
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3><span class="material-symbols-rounded">rule</span> Statuses</h3>
+                            <button class="btn btn-sm btn-primary" id="btn-add-status"><span
+                                    class="material-symbols-rounded">add</span> Novo Status</button>
+                        </div>
+                        <div class="admin-card-body" id="admin-statuses-list"></div>
+                    </div>
+                </div>
+                <div class="admin-logs-section" style="margin-top: 1.5rem;">
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3><span class="material-symbols-rounded">list_alt</span> Log de Ações</h3>
+                        </div>
+                        <div class="admin-card-body" id="admin-logs-list" style="max-height: 400px; overflow-y: auto; padding: 0;">
+                            <p style="color:var(--text-muted);font-size:0.8rem;padding:1.25rem;">Carregando logs...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODALS -->
+    <div class="modal-overlay" id="global-modal-overlay"></div>
+
+    <dialog id="process-editor-dialog" class="modern-dialog">
+        <div class="dialog-header">
+            <h2 id="dialog-title">Projeto</h2>
+            <button class="close-btn" data-close-dialog><span class="material-symbols-rounded">close</span></button>
+        </div>
+        <form id="process-form" novalidate>
+            <div class="dialog-tabs" id="process-dialog-tabs" style="display: flex; margin-bottom: 0rem; gap: 1rem;">
+                <button type="button" class="dialog-tab active" id="dialog-tab-data-btn">Dados do Projeto</button>
+                <button type="button" class="dialog-tab" id="dialog-tab-revisions-btn">Revisões</button>
+            </div>
+            <div class="dialog-body">
+                <div id="dialog-tab-content-data" class="dialog-tab-content active">
+                    <input type="hidden" id="field-id">
+                    <div class="form-group">
+                        <label for="field-projeto">Nome do Projeto <span class="required">*</span></label>
+                        <input type="text" id="field-projeto" required placeholder="Descreva a atividade...">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="field-setor">Setor <span class="required">*</span></label>
+                            <select id="field-setor" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="field-status">Status <span class="required">*</span></label>
+                            <select id="field-status" required>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="field-tipo">Tipo de Processo <span class="required">*</span></label>
+                            <select id="field-tipo" required>
+                                <option value="Procedimento">Procedimento</option>
+                                <option value="Pol&#237;tica">Pol&#237;tica</option>
+                                <option value="Manual">Manual</option>
+                                <option value="Formul&#225;rio">Formul&#225;rio</option>
+                                <option value="Projeto">Projeto</option>
+                                <option value="Inova&#231;&#227;o Tecnol&#243;gica">Inova&#231;&#227;o Tecnol&#243;gica</option>
+                                <option value="Mapeamento Processos">Mapeamento Processos</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="field-data-inicio">Data In&#237;cio <span
+                                    class="required">*</span></label><input type="date" id="field-data-inicio" required>
+                        </div>
+                        <div class="form-group"><label for="field-data-fim-prevista">Fim Prevista <span
+                                    class="required">*</span></label><input type="date" id="field-data-fim-prevista"
+                                required></div>
+                        <div class="form-group"><label for="field-data-fim-real">Fim Real</label><input type="date"
+                                id="field-data-fim-real"></div>
+                    </div>
+                    <div class="form-group" id="update-observation-wrap">
+                        <label for="field-observacao">Observa&#231;&#227;o</label>
+                        <textarea id="field-observacao" rows="3" placeholder="O que mudou?"></textarea>
+                    </div>
+                </div>
+
+                <div id="dialog-tab-content-revisions" class="dialog-tab-content">
+                    <div class="revisions-container">
+                        <h3 style="font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem;">Registrar Revisão</h3>
+                        <div class="form-row" style="margin-bottom: 1rem;">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="dialog-revision-date">Data da Revisão</label>
+                                <input type="date" id="dialog-revision-date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dialog-revision-comment">Comentário / Mudanças</label>
+                            <textarea id="dialog-revision-comment" rows="3" placeholder="O que mudou nesta revisão?"></textarea>
+                        </div>
+                        <button type="button" id="btn-dialog-register-revision" class="btn btn-primary btn-sm" style="width: 100%; margin-bottom: 1.5rem;">
+                            <span class="material-symbols-rounded" style="font-size:1.1em">add</span> Registrar Revisão
+                        </button>
+
+                        <h3 style="font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem;">Histórico de Revisões</h3>
+                        <div class="revisions-list" id="dialog-revisions-list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button type="button" class="btn btn-danger" id="btn-delete-project" style="margin-right:auto; display:none"><span class="material-symbols-rounded">delete</span> Excluir</button>
+                <button type="button" class="btn btn-outline" data-close-dialog>Cancelar</button>
+                <button type="submit" class="btn btn-primary"><span class="material-symbols-rounded">save</span>
+                    Gravar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="sector-dialog" class="modern-dialog modern-dialog-sm">
+        <div class="dialog-header">
+            <h2>Novo Setor</h2>
+            <button class="close-btn" data-close-dialog><span class="material-symbols-rounded">close</span></button>
+        </div>
+        <form id="sector-form" novalidate>
+            <div class="dialog-body">
+                <input type="hidden" id="field-sector-old-name">
+                <div class="form-group">
+                    <label for="field-sector-name">Nome do Setor <span class="required">*</span></label>
+                    <input type="text" id="field-sector-name" required placeholder="Ex: Log&#237;stica">
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button type="button" class="btn btn-outline" data-close-dialog>Cancelar</button>
+                <button type="submit" class="btn btn-primary">Registar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="user-dialog" class="modern-dialog">
+        <div class="dialog-header">
+            <h2 id="user-dialog-title">Novo Utilizador</h2>
+            <button class="close-btn" data-close-dialog><span class="material-symbols-rounded">close</span></button>
+        </div>
+        <form id="user-form" novalidate>
+            <div class="dialog-body">
+                <input type="hidden" id="field-user-id">
+                <div class="form-row">
+                    <div class="form-group"><label for="field-user-nome">Nome <span
+                                class="required">*</span></label><input type="text" id="field-user-nome" required></div>
+                    <div class="form-group"><label for="field-user-login">Login <span
+                                class="required">*</span></label><input type="text" id="field-user-login" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label for="field-user-pass">Senha <span
+                                class="required">*</span></label><input type="text" id="field-user-pass" required></div>
+                    <div class="form-group"><label for="field-user-nivel">N&#237;vel de Acesso</label>
+                        <select id="field-user-nivel">
+                            <option value="Editor">Editor (Cria e Edita, sem Excluir)</option>
+                            <option value="Usu&#225;rio">Usu&#225;rio (Cria e Edita, sem Excluir)</option>
+                            <option value="Leitor">Leitor (Apenas Visualiza&#231;&#227;o)</option>
+                            <option value="Admin">Admin (Acesso Total)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group"><label for="field-user-setor-base">Setor Base</label><select
+                        id="field-user-setor-base"></select></div>
+                <div class="form-group">
+                    <label>Setores Vis&#237;veis</label>
+                    <div class="checkbox-grid" id="field-user-setores-visiveis"></div>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button type="button" class="btn btn-outline" data-close-dialog>Cancelar</button>
+                <button type="submit" class="btn btn-primary">Gravar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="status-dialog" class="modern-dialog modern-dialog-sm">
+        <div class="dialog-header">
+            <h2>Novo Status</h2>
+            <button class="close-btn" data-close-dialog><span class="material-symbols-rounded">close</span></button>
+        </div>
+        <form id="status-form" novalidate>
+            <div class="dialog-body">
+                <input type="hidden" id="field-status-id">
+                <div class="form-group">
+                    <label for="field-status-name">Nome do Status <span class="required">*</span></label>
+                    <input type="text" id="field-status-name" required placeholder="Ex: Ajustes Finais">
+                </div>
+                <div class="form-group">
+                    <label for="field-status-percentage">Percentagem (0 a 100) <span class="required">*</span></label>
+                    <input type="number" id="field-status-percentage" min="0" max="100" step="0.5" required placeholder="Ex: 80">
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button type="button" class="btn btn-outline" data-close-dialog>Cancelar</button>
+                <button type="submit" class="btn btn-primary">Gravar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="inconformidade-dialog" class="modern-dialog">
+        <div class="dialog-header">
+            <h2 id="inc-dialog-title">Nova Inconformidade</h2>
+            <button class="close-btn" data-close-dialog><span class="material-symbols-rounded">close</span></button>
+        </div>
+        <form id="inconformidade-form" novalidate>
+            <div class="dialog-body">
+                <input type="hidden" id="field-inc-id">
+                <div class="form-group">
+                    <label for="field-inc-descricao">Descrição da Inconformidade / Ocorrência <span class="required">*</span></label>
+                    <textarea id="field-inc-descricao" required rows="3" placeholder="Descreva detalhadamente o desvio encontrado..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-inc-setor-origem">Setor de Origem <span class="required">*</span></label>
+                        <select id="field-inc-setor-origem" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="field-inc-status">Status <span class="required">*</span></label>
+                        <select id="field-inc-status" required>
+                            <option value="Em análise">Em análise</option>
+                            <option value="Em andamento">Em andamento</option>
+                            <option value="Finalizado">Finalizado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-inc-projeto-vinculado">Processo Vinculado</label>
+                        <select id="field-inc-projeto-vinculado"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Setores Afetados <span class="required">*</span></label>
+                    <div class="checkbox-grid" id="field-inc-setores-afetados" style="max-height: 120px;"></div>
+                </div>
+                <div class="form-group">
+                    <label for="field-inc-observacao">Plano de Ação / Observação</label>
+                    <textarea id="field-inc-observacao" rows="2" placeholder="Descreva as ações para conter/tratar a inconformidade..."></textarea>
+                </div>
+                <div class="form-group" id="inc-new-comment-group" style="display:none;">
+                    <label for="field-inc-new-comment">Atualizar Histórico (Nova Observação)</label>
+                    <input type="text" id="field-inc-new-comment" placeholder="Descreva o andamento atual...">
+                </div>
+
+                <div class="timeline-container" id="inc-history-container" style="display:none; margin-top: 1.5rem;">
+                    <h3 style="font-size: 0.9rem; margin-bottom: 0.75rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem;">Histórico de Tratamento</h3>
+                    <div class="css-timeline" id="inc-timeline-list" style="max-height: 200px; overflow-y: auto; padding-left: 1.25rem;"></div>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button type="button" class="btn btn-danger" id="btn-delete-inconformidade" style="margin-right:auto; display:none">
+                    <span class="material-symbols-rounded">delete</span> Excluir
+                </button>
+                <button type="button" class="btn btn-outline" data-close-dialog>Cancelar</button>
+                <button type="submit" class="btn btn-primary">
+                    <span class="material-symbols-rounded">save</span> Gravar
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="modal-dashboard-projects" class="modern-dialog">
+        <div class="dialog-header">
+            <h2 id="modal-dashboard-projects-title">Processos</h2>
+            <button class="close-btn" onclick="document.getElementById('modal-dashboard-projects').close();"><span class="material-symbols-rounded">close</span></button>
+        </div>
+        <div class="dialog-body" style="max-height: 450px; overflow-y: auto; padding: 1.25rem;">
+            <div id="modal-dashboard-projects-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <!-- Populado dinamicamente -->
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Offcanvas Timeline -->
+    <div id="offcanvas-details" class="offcanvas">
+        <div class="offcanvas-header">
+            <div>
+                <span class="offcanvas-eyebrow" id="detail-sector">&#8212;</span>
+                <h2 id="detail-title">Projeto</h2>
+            </div>
+            <button class="close-btn" id="btn-close-offcanvas"><span
+                    class="material-symbols-rounded">arrow_forward</span></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="detail-kpis">
+                <div class="detail-kpi-item"><span class="material-symbols-rounded">schedule</span>
+                    <div><small>Dias P/ Conclus&#227;o</small><strong id="detail-dias">--</strong></div>
+                </div>
+                <div class="detail-kpi-item"><span class="material-symbols-rounded">equalizer</span>
+                    <div><small>Conclus&#227;o</small><strong id="detail-percent">--%</strong></div>
+                </div>
+            </div>
+            <div class="offcanvas-tabs" style="display: flex; border-bottom: 1px solid var(--border-color); margin-bottom: 1.25rem; gap: 1rem;">
+                <button class="offcanvas-tab active" id="tab-timeline-btn" style="padding: 0.5rem 0.25rem; border-bottom: 2px solid transparent; color: var(--text-secondary); font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: var(--transition-fast);">Histórico</button>
+                <button class="offcanvas-tab" id="tab-revisions-btn" style="padding: 0.5rem 0.25rem; border-bottom: 2px solid transparent; color: var(--text-secondary); font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: var(--transition-fast);">Revisões</button>
+            </div>
+
+            <div id="offcanvas-tab-timeline" class="offcanvas-tab-content active">
+                <div class="timeline-container">
+                    <h3>Linha do Tempo (Log Imut&#225;vel)</h3>
+                    <div class="css-timeline" id="detail-timeline"></div>
+                </div>
+            </div>
+
+            <div id="offcanvas-tab-revisions" class="offcanvas-tab-content" style="display: none;">
+                <div class="revisions-container">
+                    <h3>Registrar Revisão</h3>
+                    <form id="offcanvas-revision-form" class="offcanvas-form" style="margin-bottom: 1.5rem;">
+                        <input type="hidden" id="revision-project-id">
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="revision-date">Data da Revisão</label>
+                                <input type="date" id="revision-date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="revision-comment">Comentário / Mudanças</label>
+                            <textarea id="revision-comment" rows="2" placeholder="O que mudou nesta revisão?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm" style="width: 100%;">
+                            <span class="material-symbols-rounded" style="font-size:1.1em">add</span> Registrar Revisão
+                        </button>
+                    </form>
+
+                    <h3 style="margin-top: 1.5rem; font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.4rem;">Histórico de Revisões</h3>
+                    <div class="revisions-list" id="detail-revisions-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Compat SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script>
+        firebase.initializeApp({
+            apiKey: "SUA_FIREBASE_API_KEY",
+            authDomain: "gestao-de-processos-ca78d.firebaseapp.com",
+            projectId: "gestao-de-processos-ca78d",
+            storageBucket: "gestao-de-processos-ca78d.firebasestorage.app",
+            messagingSenderId: "1054791464745",
+            appId: "1:1054791464745:web:1f36a10da44457eecfa938",
+            measurementId: "G-V3QK8MRXZZ"
+        });
+        window.db = firebase.firestore();
+        console.log("🚀 Jarvis: Firebase conectado (Modo Compat). Banco de dados pronto!");
+    </script>
+    <!-- SheetJS for multi-sheet Excel exports -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="core.js?v=12.3"></script>
+    <script src="ui.js?v=12.3"></script>
+</body>
+
+</html>

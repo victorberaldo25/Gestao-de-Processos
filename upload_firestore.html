@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Processos para Firestore</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',system-ui,sans-serif; }
+        body { background:#0f172a; color:#f8fafc; display:flex; align-items:center; justify-content:center; height:100vh; }
+        .card { background:#1e293b; border:1px solid #334155; border-radius:12px; padding:2.5rem; width:600px; max-width:95%; }
+        h1 { font-size:1.4rem; margin-bottom:0.5rem; }
+        p { color:#94a3b8; font-size:0.85rem; margin-bottom:1.5rem; }
+        .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.7rem 1.5rem; border-radius:8px; border:none; font-size:0.9rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+        .btn-primary { background:#6366f1; color:white; }
+        .btn-primary:hover { background:#4f46e5; }
+        .btn-danger { background:#ef4444; color:white; margin-left:0.5rem; }
+        .btn:disabled { opacity:0.5; cursor:not-allowed; }
+        #log { margin-top:1.5rem; background:#0f172a; border:1px solid #334155; border-radius:8px; padding:1rem; max-height:300px; overflow-y:auto; font-size:0.75rem; font-family:monospace; color:#94a3b8; }
+        .ok { color:#10b981; } .err { color:#ef4444; } .warn { color:#f59e0b; }
+        .stats { display:flex; gap:1rem; margin-top:1rem; }
+        .stat { flex:1; background:#0f172a; border:1px solid #334155; border-radius:8px; padding:0.75rem; text-align:center; }
+        .stat strong { display:block; font-size:1.5rem; margin-top:0.25rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>&#128640; Upload para Firestore</h1>
+        <p>Envia todos os projetos do <code>banco_processos.json</code> para o Firestore. Este script l&#234; o JSON e cria cada projeto como um documento na cole&#231;&#227;o <code>projects</code>.</p>
+
+        <button class="btn btn-primary" id="btn-upload" onclick="startUpload()">
+            Iniciar Upload
+        </button>
+        <button class="btn btn-danger" id="btn-clear" onclick="clearFirestore()">
+            Limpar Firestore
+        </button>
+
+        <div class="stats" id="stats" style="display:none">
+            <div class="stat"><small>Total</small><strong id="stat-total">0</strong></div>
+            <div class="stat"><small>Enviados</small><strong id="stat-ok" class="ok">0</strong></div>
+            <div class="stat"><small>Erros</small><strong id="stat-err" class="err">0</strong></div>
+        </div>
+
+        <div id="log"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script>
+        firebase.initializeApp({
+            apiKey: "SUA_FIREBASE_API_KEY",
+            authDomain: "gestao-de-processos-ca78d.firebaseapp.com",
+            projectId: "gestao-de-processos-ca78d",
+            storageBucket: "gestao-de-processos-ca78d.firebasestorage.app",
+            messagingSenderId: "1054791464745",
+            appId: "1:1054791464745:web:1f36a10da44457eecfa938"
+        });
+        var db = firebase.firestore();
+
+        function log(msg, cls) {
+            var el = document.getElementById('log');
+            el.innerHTML += '<div class="' + (cls||'') + '">' + msg + '</div>';
+            el.scrollTop = el.scrollHeight;
+        }
+
+        async function startUpload() {
+            var btn = document.getElementById('btn-upload');
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+            document.getElementById('stats').style.display = 'flex';
+            log('Buscando banco_processos.json...');
+
+            try {
+                var res = await fetch('banco_processos.json');
+                if (!res.ok) throw new Error('Arquivo n\u00e3o encontrado (HTTP ' + res.status + ')');
+                var data = await res.json();
+                log('Encontrados ' + data.length + ' projetos.', 'ok');
+                document.getElementById('stat-total').textContent = data.length;
+
+                var ok = 0, err = 0;
+
+                for (var i = 0; i < data.length; i++) {
+                    var p = data[i];
+                    try {
+                        // Normalizar campo dataInício -> dataInicio
+                        var doc = {
+                            projeto: p.projeto || '',
+                            setor: p.setor || 'Geral',
+                            statusAtual: p.statusAtual || 'Em Standby',
+                            dataInicio: p['dataIn\u00edcio'] || p.dataInicio || '',
+                            dataFimPrevista: p.dataFimPrevista || '',
+                            dataFimReal: p.dataFimReal || null,
+                            historicoAtualizacoes: p.historicoAtualizacoes || []
+                        };
+
+                        await db.collection('projects').add(doc);
+                        ok++;
+                        document.getElementById('stat-ok').textContent = ok;
+                        if (ok % 10 === 0) log(ok + '/' + data.length + ' enviados...', 'ok');
+                    } catch (e) {
+                        err++;
+                        document.getElementById('stat-err').textContent = err;
+                        log('ERRO [' + p.id + ']: ' + e.message, 'err');
+                    }
+                }
+
+                log('');
+                log('=== UPLOAD CONCLU\u00cdDO ===', 'ok');
+                log(ok + ' projetos enviados com sucesso.', 'ok');
+                if (err > 0) log(err + ' erros.', 'err');
+
+                // Criar user admin se n\u00e3o existir
+                var usersSnap = await db.collection('users').get();
+                if (usersSnap.empty) {
+                    await db.collection('users').add({
+                        nome: 'Victor Beraldo', login: 'Victor Beraldo', senha: '0000',
+                        nivelAcesso: 'Admin', setorBase: 'Geral', setoresVisiveis: ['__ALL__']
+                    });
+                    log('Admin criado: Victor Beraldo / 0000', 'warn');
+                } else {
+                    log('Usu\u00e1rios j\u00e1 existem (' + usersSnap.size + '), n\u00e3o criou admin.', 'warn');
+                }
+
+            } catch (e) {
+                log('ERRO FATAL: ' + e.message, 'err');
+            }
+
+            btn.disabled = false;
+            btn.textContent = 'Upload Conclu\u00eddo!';
+        }
+
+        async function clearFirestore() {
+            if (!confirm('Tem certeza? Isso apagar\u00e1 TODOS os projetos e usu\u00e1rios do Firestore!')) return;
+            log('Limpando Firestore...', 'warn');
+
+            try {
+                var snap = await db.collection('projects').get();
+                var batch = db.batch();
+                var count = 0;
+                snap.forEach(function(doc) { batch.delete(doc.ref); count++; });
+                await batch.commit();
+                log(count + ' projetos removidos.', 'warn');
+
+                var uSnap = await db.collection('users').get();
+                var batch2 = db.batch();
+                var uCount = 0;
+                uSnap.forEach(function(doc) { batch2.delete(doc.ref); uCount++; });
+                await batch2.commit();
+                log(uCount + ' usu\u00e1rios removidos.', 'warn');
+
+                log('Firestore limpo!', 'ok');
+            } catch (e) {
+                log('Erro ao limpar: ' + e.message, 'err');
+            }
+        }
+    </script>
+</body>
+</html>

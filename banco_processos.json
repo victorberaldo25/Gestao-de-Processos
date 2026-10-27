@@ -1,0 +1,1192 @@
+[
+    {
+        "id": "PRJ-1000",
+        "setor": "Financeiro",
+        "projeto": "Gestão do Ciclo de Faturamento e Contas a Receber",
+        "statusAtual": "Concluído",
+        "dataInício": "2025-09-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1001",
+        "setor": "Financeiro",
+        "projeto": "Política de Prazos e Procedimentos Para Processos de Pessoal e Pagamento",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1002",
+        "setor": "Financeiro",
+        "projeto": "Procedimento Pagamento Antecipado",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1003",
+        "setor": "Financeiro",
+        "projeto": "Manual para Prestação de Contas",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1004",
+        "setor": "Financeiro",
+        "projeto": "Política Geral para Provisionamento Financeiro",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-29",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1005",
+        "setor": "Financeiro",
+        "projeto": "Procedimento para Pagamento de Encargos Frota (IPVA, licenciamento e MULTAS)",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1006",
+        "setor": "Financeiro",
+        "projeto": "Política de Pagamento Geral",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1007",
+        "setor": "Financeiro",
+        "projeto": "Procedimento Gestor do Contrato",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-12-10",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1008",
+        "setor": "Financeiro",
+        "projeto": "Check-list - Conferência Financeiro - entregas",
+        "statusAtual": "Concluído",
+        "dataInício": "2025-09-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1009",
+        "setor": "Financeiro",
+        "projeto": "Política Adiantamento de Despesas de Viagem e Prestação de Contas",
+        "statusAtual": "Concluído",
+        "dataInício": "2025-12-16",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1010",
+        "setor": "Financeiro",
+        "projeto": "Política Pagamento Antecipado",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1011",
+        "setor": "Financeiro",
+        "projeto": "Política Contas a Pagar (EBB-PROC-CONTAS-PAGAR-001)",
+        "statusAtual": "Esboço Técnico",
+        "dataInício": "2026-03-02",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1012",
+        "setor": "Financeiro",
+        "projeto": "Revisão Natureza Financeira",
+        "statusAtual": "Esboço Técnico",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1013",
+        "setor": "Financeiro",
+        "projeto": "EBB-SUBPROC-FLUXO-CAIXA-TOTVS-01 (Processo Fluxo de Caixa no ERP TOTVS PROTHEUS)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1014",
+        "setor": "Financeiro",
+        "projeto": "Cronograma Saneamento de PA/Cartão de Credito/Contas a Pagar e Contas a Receber",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1015",
+        "setor": "Financeiro",
+        "projeto": "Política Contas Vencidas",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1016",
+        "setor": "Financeiro",
+        "projeto": "Procedimento Contas Vencidas",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1017",
+        "setor": "Financeiro",
+        "projeto": "Política de Orçamento e POP Controle Orçamentário",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1018",
+        "setor": "Financeiro",
+        "projeto": "Definição e Implementação de Processo de Conciliação Bancária (TOTVS)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1019",
+        "setor": "Financeiro",
+        "projeto": "Definição e Configuração de Relatórios Gerenciais Financeiros",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1020",
+        "setor": "Financeiro",
+        "projeto": "Mapeamento e Parametrização Orçamentária no TOTVS",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1021",
+        "setor": "Financeiro",
+        "projeto": "Implementação Gestão Financeira Via TOTVS",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1022",
+        "setor": "Financeiro",
+        "projeto": "Manual Solicitação Adiantamento de despesa de Viagem (Aplicativo AgroTech)",
+        "statusAtual": "Elaboração de Ferramentas",
+        "dataInício": "2025-12-16",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1023",
+        "setor": "Financeiro",
+        "projeto": "Procedimento para Gerenciamento da Prestação de Contas (Ordem de Pagamento) e Desconto em Folha",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1024",
+        "setor": "Suprimentos",
+        "projeto": "Procedimento para Solicitações de Compras Operação",
+        "statusAtual": "Concluído",
+        "dataInício": "2025-09-10",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1025",
+        "setor": "Suprimentos",
+        "projeto": "Procedimento para Emissão da Solicitação de Compra no TOTVS Protheus",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1026",
+        "setor": "Suprimentos",
+        "projeto": "Check-list - Conferência Suprimentos",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1027",
+        "setor": "Suprimentos",
+        "projeto": "Procedimento - Controle NF emitidas contra ECO",
+        "statusAtual": "Concluído",
+        "dataInício": "2025-11-05",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1028",
+        "setor": "Suprimentos",
+        "projeto": "Procedimento - Controle DDA",
+        "statusAtual": "Concluído",
+        "dataInício": "2025-12-08",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1029",
+        "setor": "Suprimentos",
+        "projeto": "Procedimento para Controle Fechamento Hospedagem (Lavanderia)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1030",
+        "setor": "Suprimentos",
+        "projeto": "Procedimento Follow-up compras",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1031",
+        "setor": "Suprimentos",
+        "projeto": "Política de Compras",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1032",
+        "setor": "Suprimentos",
+        "projeto": "NOVO Procedimento Operacional Padrão para Solicitação de Material de Tecnologia",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1033",
+        "setor": "Suprimentos",
+        "projeto": "Cronograma Revisão e Saneamento do Cadastro de Fornecedores (TOTVS)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1034",
+        "setor": "Suprimentos",
+        "projeto": "Procedimento para Cotação e Análise de Propostas (com uso do TOTVS)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1035",
+        "setor": "Suprimentos",
+        "projeto": "Política e Procedimento Homologação de Fornecedores",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1036",
+        "setor": "Suprimentos",
+        "projeto": "Procedimento de Avaliação e Qualificação de Fornecedores",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1037",
+        "setor": "Juridico",
+        "projeto": "Código de Conduta e Ética",
+        "statusAtual": "Elaboração de Processos",
+        "dataInício": "2026-01-05",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1038",
+        "setor": "Juridico",
+        "projeto": "Política de Segurança e Proteção a Vida: Direetrizes e Penalidades",
+        "statusAtual": "Concluído",
+        "dataInício": "2025-12-08",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1039",
+        "setor": "Juridico",
+        "projeto": "Política Premiação",
+        "statusAtual": "Elaboração de Processos",
+        "dataInício": "2026-02-20",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1040",
+        "setor": "Juridico",
+        "projeto": "POP e Política para Gestão de Contencioso (acompanhamento de processos legais)",
+        "statusAtual": "Elaboração de Processos",
+        "dataInício": "2026-03-02",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1041",
+        "setor": "Juridico",
+        "projeto": "1. Procedimento de Gestão de Contratos (Ciclo de Vida completo) \n2. Matriz de Alçadas e Aprovação de Contratos",
+        "statusAtual": "Elaboração de Processos",
+        "dataInício": "2026-03-02",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1042",
+        "setor": "Juridico",
+        "projeto": "Implementação Banco de Horas",
+        "statusAtual": "Aprovação",
+        "dataInício": "2025-11-17",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1043",
+        "setor": "Juridico",
+        "projeto": "Implementação Complice Trabalhista",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1044",
+        "setor": "Geral",
+        "projeto": "Política Compliance",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1045",
+        "setor": "Juridico",
+        "projeto": "Política de Auditoria Interna Departamental",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1046",
+        "setor": "Juridico",
+        "projeto": "POP de Monitoramento de SLAs e Vigência de Contratos",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1047",
+        "setor": "Juridico",
+        "projeto": "Procedimento para Criação e Revisão de Contratos  - ANEXO Padronização de Minutas Contratuais",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1048",
+        "setor": "RH",
+        "projeto": "Fechamento Folha de Pagamento (Processo)",
+        "statusAtual": "Esboço Técnico",
+        "dataInício": "2026-02-23",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1049",
+        "setor": "RH",
+        "projeto": "Gestão Portal",
+        "statusAtual": "Aprovação",
+        "dataInício": "2026-02-24",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1050",
+        "setor": "RH",
+        "projeto": "POP Recrutamento e Seleção",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1051",
+        "setor": "RH",
+        "projeto": "Política de Cargos e Salários",
+        "statusAtual": "Esboço Técnico",
+        "dataInício": "2026-02-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1052",
+        "setor": "RH",
+        "projeto": "Procedimento para Movimentação e alocação de pessoal centro de custo",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-02-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1053",
+        "setor": "RH",
+        "projeto": "Politica Desligamento",
+        "statusAtual": "Elaboração de Processos",
+        "dataInício": "2026-02-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1054",
+        "setor": "RH",
+        "projeto": "POP Onboarding e Offboarding de Colaboradores (DHO)",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1055",
+        "setor": "RH",
+        "projeto": "Implementação Assinatura de documentação (Digital)",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1056",
+        "setor": "RH",
+        "projeto": "Implementação Chat/Bot",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1057",
+        "setor": "RH",
+        "projeto": "Implementação Solides",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1058",
+        "setor": "RH",
+        "projeto": "POP FeedBack",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1059",
+        "setor": "RH",
+        "projeto": "Política de Combate ao Assédio Sexual e Moral",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1060",
+        "setor": "RH",
+        "projeto": "Política de Treinamento e Desenvolvimento",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1061",
+        "setor": "RH",
+        "projeto": "Otimização e Configuração Módulo Folha de Pagamento (TOTVS)",
+        "statusAtual": "Elaboração de Ferramentas",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1062",
+        "setor": "RH",
+        "projeto": "POP para Gestão de Ponto Eletrônico e Integração com TOTVS",
+        "statusAtual": "Esboço Técnico",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1063",
+        "setor": "RH",
+        "projeto": "Revisão e Higienização do Cadastro de Colaboradores (TOTVS/Grupos)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1064",
+        "setor": "RH",
+        "projeto": "POP para Processos de Férias e Rescisões (com uso do TOTVS)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1065",
+        "setor": "RH",
+        "projeto": "Revisão e treinamento Completo Módulos RH/DP (TOTVS)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1066",
+        "setor": "RH",
+        "projeto": "Implantação e Configuração Módulo Benefícios (TOTVS)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1067",
+        "setor": "RH",
+        "projeto": "Implantar NR1",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1068",
+        "setor": "RH",
+        "projeto": "Procedimento Projetos Endomarketing Anual",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1069",
+        "setor": "Fiscal",
+        "projeto": "Política Fechamento Contábil/Fiscal",
+        "statusAtual": "Aprovação",
+        "dataInício": "2026-03-05",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1070",
+        "setor": "Fiscal",
+        "projeto": "Procedimento Cadastro Produtos",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1071",
+        "setor": "Fiscal",
+        "projeto": "Check-list - Conferência Protocolo Fiscal",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1072",
+        "setor": "Fiscal",
+        "projeto": "Procedimento de Gestão de Ativo Imobilizado",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1073",
+        "setor": "Fiscal",
+        "projeto": "Planilha acompanhamento STATUS do Ativo",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1074",
+        "setor": "Fiscal",
+        "projeto": "Política e Procedimento de Faturamento e Emissão de NF",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1075",
+        "setor": "Fiscal",
+        "projeto": "Reforma Tributária (1ª Etapa)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1076",
+        "setor": "Fiscal",
+        "projeto": "Otimização processo de separação movimentos de entrada DOCs",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1077",
+        "setor": "Fiscal",
+        "projeto": "Procedimento Fechamento Fiscal Mensal",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1078",
+        "setor": "Fiscal",
+        "projeto": "POP para Fechamento Contábil Mensal/Anual (com uso do TOTVS)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1079",
+        "setor": "Fiscal",
+        "projeto": "Política de prazos legais (Obrigações Principais e Acessórias e Entrega)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1080",
+        "setor": "Fiscal",
+        "projeto": "Política Prazos de liberação dos módulos para Fechamento Mensal",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1081",
+        "setor": "Fiscal",
+        "projeto": "Revisão e Ajuste do Plano de Contas no TOTVS",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1082",
+        "setor": "Fiscal",
+        "projeto": "Procedimento Contabilização dos Contratos (TOTVS) TXT Sistema",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1083",
+        "setor": "Fiscal",
+        "projeto": "Mapeamento e Otimização do Processo de Apuração de Tributos (TOTVS)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1084",
+        "setor": "Fiscal",
+        "projeto": "Política de validação de tributos (Alíquotas, cálculos e datas)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1085",
+        "setor": "Fiscal",
+        "projeto": "Cronograma Saneamento Despesa de Viagem (passado)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1086",
+        "setor": "TI",
+        "projeto": "PCP com Bloco K + Melhorias do TMS",
+        "statusAtual": "Concluído",
+        "dataInício": "2025-04-10",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1087",
+        "setor": "TI",
+        "projeto": "Implementação Modulo Compras (alçadas aprovações)",
+        "statusAtual": "Concluído",
+        "dataInício": "2025-06-30",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1088",
+        "setor": "TI",
+        "projeto": "Projeto Multicultivo (PIMS)",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2025-03-26",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1089",
+        "setor": "TI",
+        "projeto": "Implementação e Configuração Módulo de Gestão de Contratos (TOTVS)",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2025-10-29",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1090",
+        "setor": "TI",
+        "projeto": "Projeto de Migração para Nova VERSÃO 12.1.2510",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2026-01-05",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1091",
+        "setor": "TI",
+        "projeto": "Mockup do Novo Pedido de Compra",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2025-09-30",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1092",
+        "setor": "TI",
+        "projeto": "Projeto TOTVS Analytics \"FAST BI\"",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2025-12-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1093",
+        "setor": "TI",
+        "projeto": "Proposta para implantação do Next BP",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2024-11-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1094",
+        "setor": "TI",
+        "projeto": "Capacitação do SmartView",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2025-09-29",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1095",
+        "setor": "TI",
+        "projeto": "Liberação de acesso a tabelas TOTVS via Bisexpress (bisexpress.com.br) licença I",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2026-01-23",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1096",
+        "setor": "TI",
+        "projeto": "Projeto RPA TOTVS Portal Fiscal",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2025-10-20",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1097",
+        "setor": "TI",
+        "projeto": "Projeto Novo Gestor Financeiro Fluxo de caixa",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2026-02-02",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1098",
+        "setor": "TI",
+        "projeto": "Melhoria modulo financeiro: Aplicações e Emprestimos",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2026-11-10",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1099",
+        "setor": "TI",
+        "projeto": "Procedimento de Monitoramento de Performance do TOTVS",
+        "statusAtual": "Não Iniciado",
+        "dataInício": "2026-05-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1100",
+        "setor": "TI",
+        "projeto": "Documentação Técnica da Instalação e Customizações do TOTVS (Guarda e Versionamento de Fontes)",
+        "statusAtual": "Não Iniciado",
+        "dataInício": "2026-06-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1101",
+        "setor": "TI",
+        "projeto": "Definição e Implementação de Política de Backup e Restore (TOTVS)",
+        "statusAtual": "Não Iniciado",
+        "dataInício": "2026-07-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1102",
+        "setor": "TI",
+        "projeto": "Governança e Segurança de Acesso ao TOTVS",
+        "statusAtual": "Não Iniciado",
+        "dataInício": "2026-08-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1103",
+        "setor": "TI",
+        "projeto": "OP para Atendimento a Chamados e Suporte ao Usuário TOTVS",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1104",
+        "setor": "TI",
+        "projeto": "Planilha Controle Pasta Servidor",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2025-05-02",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1105",
+        "setor": "TI",
+        "projeto": "POP para Movimentação de Ativos de Tecnologia da Informação (TI) e Comunicação",
+        "statusAtual": "Não Iniciado",
+        "dataInício": "2026-01-05",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1106",
+        "setor": "TI",
+        "projeto": "POP Política de Uso Aceitável de Recursos de TI",
+        "statusAtual": "Não Iniciado",
+        "dataInício": "2026-02-09",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1107",
+        "setor": "TI",
+        "projeto": "Plano de Continuidade de Negócios (BCP) e Recuperação de Desastres (DRP)",
+        "statusAtual": "Não Iniciado",
+        "dataInício": "2026-09-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1108",
+        "setor": "TI",
+        "projeto": "Procedimento para Devolução de Ativos de Tecnologia no Desligamento",
+        "statusAtual": "Concluído",
+        "dataInício": "2026-03-27",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1109",
+        "setor": "TI",
+        "projeto": "Modulo de Patrimonio (Ativo e Manutenção Frotas NG)",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2025-08-26",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1110",
+        "setor": "TI",
+        "projeto": "Importação  do Rateio RH para facilitar lançamento",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2026-03-17",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1111",
+        "setor": "TI",
+        "projeto": "Integração com Prefeitura de Bauru (pacote novo)",
+        "statusAtual": "Em Andamento",
+        "dataInício": "2025-11-28",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1112",
+        "setor": "Controladoria",
+        "projeto": "Estrturação Centro de Custo",
+        "statusAtual": "Revisões Finais",
+        "dataInício": "2026-01-26",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1113",
+        "setor": "Controladoria",
+        "projeto": "Mapeamento KPI",
+        "statusAtual": "Esboço Técnico",
+        "dataInício": "2026-04-30",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1114",
+        "setor": "Controladoria",
+        "projeto": "Viabilidade de Projetos com base no Fluxo de Caixa",
+        "statusAtual": "Esboço Técnico",
+        "dataInício": "2026-05-04",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1115",
+        "setor": "Controladoria",
+        "projeto": "Projeto Orçamento (Departamentos e por Operação)",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1116",
+        "setor": "Controladoria",
+        "projeto": "Monitoramento do Fechamento Mensal (Contábil/Controladoria)",
+        "statusAtual": "Elaboração de Processos",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1117",
+        "setor": "Controladoria",
+        "projeto": "Elaboração Book Controladoria (Realizado/Orçado/forecast)",
+        "statusAtual": "Elaboração de Ferramentas",
+        "dataInício": "2026-01-26",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    },
+    {
+        "id": "PRJ-1118",
+        "setor": "Controladoria",
+        "projeto": "Projeto PRJ-1118",
+        "statusAtual": "Em Standby",
+        "dataInício": "2026-01-01",
+        "dataFimPrevista": "2026-12-31",
+        "dataFimReal": null,
+        "historicoAtualizacoes": []
+    }
+]
