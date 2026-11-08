@@ -47,11 +47,11 @@
     <script>
         firebase.initializeApp({
             apiKey: "SUA_FIREBASE_API_KEY",
-            authDomain: "gestao-de-processos-ca78d.firebaseapp.com",
-            projectId: "gestao-de-processos-ca78d",
-            storageBucket: "gestao-de-processos-ca78d.firebasestorage.app",
-            messagingSenderId: "1054791464745",
-            appId: "1:1054791464745:web:1f36a10da44457eecfa938"
+            authDomain: "SEU_PROJETO.firebaseapp.com",
+            projectId: "SEU_PROJETO",
+            storageBucket: "SEU_PROJETO.firebasestorage.app",
+            messagingSenderId: "SEU_SENDER_ID",
+            appId: "SEU_APP_ID"
         });
         var db = firebase.firestore();
 
@@ -110,11 +110,12 @@
                 // Criar user admin se n\u00e3o existir
                 var usersSnap = await db.collection('users').get();
                 if (usersSnap.empty) {
+                    var senhaInicial = Math.random().toString(36).slice(2, 8) + Math.random().toString(36).slice(2, 8);
                     await db.collection('users').add({
-                        nome: 'Victor Beraldo', login: 'Victor Beraldo', senha: '0000',
+                        nome: 'Administrador', login: 'admin', senha: senhaInicial,
                         nivelAcesso: 'Admin', setorBase: 'Geral', setoresVisiveis: ['__ALL__']
                     });
-                    log('Admin criado: Victor Beraldo / 0000', 'warn');
+                    log('Admin criado: admin / ' + senhaInicial + ' (anote e troque após o login)', 'warn');
                 } else {
                     log('Usu\u00e1rios j\u00e1 existem (' + usersSnap.size + '), n\u00e3o criou admin.', 'warn');
                 }
