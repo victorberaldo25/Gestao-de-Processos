@@ -2,3 +2,11 @@ node_modules/
 .venv/
 .env
 .firebase/
+
+# Segredos (adicionado na auditoria 2026-11-08)
+.env.*
+!.env.example
+serviceAccountKey.json
+*-firebase-adminsdk-*.json
+*.pem
+*.key

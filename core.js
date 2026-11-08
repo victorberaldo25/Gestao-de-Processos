@@ -116,10 +116,13 @@ var Store = (function () {
     };
 
     Store.prototype._bootstrapAdmin = function () {
+        // Primeiro acesso: cria um admin com senha aleatória (nunca fixa no código).
+        var senhaInicial = Math.random().toString(36).slice(2, 8) + Math.random().toString(36).slice(2, 8);
         window.db.collection('users').add({
-            nome: 'Victor Beraldo', login: 'Victor Beraldo', senha: '0000',
+            nome: 'Administrador', login: 'admin', senha: senhaInicial,
             nivelAcesso: 'Admin', setorBase: 'Geral', setoresVisiveis: ['__ALL__']
         });
+        alert('Primeiro acesso: usuário "admin" criado com a senha "' + senhaInicial + '". Anote e troque após o login.');
     };
 
     Store.prototype._enrich = function (p) {
